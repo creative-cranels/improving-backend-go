@@ -7,7 +7,7 @@
   - What are Go’s unique features compared to other languages?
   - Implement a basic program that takes user input and outputs the result.
 
-**Tasks**
+##### Tasks
 
 **1. Basic Program:**
 
@@ -43,15 +43,70 @@ Create a program that prompts the user for their age, then calculates and prints
 Enter your age: 25
 You are approximately 9125 days old.
 ```
-
-
-
 #### **Day 2: Control Structures**
 - **Theory**: Conditionals (if-else), loops (for, range), and switch.
 - **Coding**: Create a number guessing game using control structures.
 - **Tasks**:
   - What is the difference between a regular `for` loop and `range` in Go?
   - Implement a loop that sums all numbers in an array.
+
+##### Tasks
+
+**1. FizzBuzz with a Twist:**
+
+Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz" instead of the number, and for multiples of 5, print "Buzz". For numbers that are multiples of both 3 and 5, print "FizzBuzz". Additionally, if a number is a prime, print "Prime" instead of the number.
+```
+1 Prime Fizz Prime Buzz Fizz Prime 8 Fizz Buzz Prime Fizz 14 FizzBuzz
+```
+
+**2. Palindrome Checker:**
+
+Create a program that takes a string as input and uses a loop to check whether it is a palindrome (reads the same backward and forward). Ignore spaces and case when determining if it is a palindrome.
+
+```
+Enter a string: RaceCar
+It is a palindrome.
+```
+
+**3. Grade Calculator:**
+
+Write a program that takes a series of grades (0-100) as input and uses a loop to calculate the ```average grade```, the ```highest grade```, and the ```lowest grade```. The program should stop when the user inputs a negative number.
+
+```
+Enter grade (negative number to end): 85
+Enter grade: 92
+Enter grade: 76
+Enter grade: -1
+Average Grade: 84.3
+Highest Grade: 92
+Lowest Grade: 76
+```
+
+**4. Factorial Calculation with Error Handling:**
+
+Create a program that prompts the user for a non-negative integer and calculates the factorial of that number using a loop. If the user enters a negative number, display an error message and prompt them to enter a non-negative integer.
+
+```
+Enter a non-negative integer: 5
+Factorial: 120
+
+Enter a non-negative integer: -3
+Error: Please enter a non-negative integer.
+```
+
+**5. Number Guessing Game with Limited Attempts:**
+
+Write a number guessing game where the program randomly selects a number between 1 and 50. The user has up to 5 attempts to guess the number. After each incorrect guess, provide a hint ("too high" or "too low"). If the user fails to guess within 5 attempts, reveal the correct number.
+
+```
+Guess the number between 1 and 50: 20
+Too low. Try again.
+Guess the number: 30
+Too high. Try again.
+...
+Sorry, you've used all attempts. The correct number was 27.
+
+```
 
 #### **Day 3: Functions and Error Handling**
 - **Theory**: Function syntax, multiple return values, and error handling in Go.
