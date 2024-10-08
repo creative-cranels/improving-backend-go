@@ -180,13 +180,83 @@ func main() {
 }
 ```
 
-
 #### **Day 4: Go Data Structures**
 - **Theory**: Arrays, slices, maps, and structs.
 - **Coding**: Implement a contact list using structs and slices.
 - **Tasks**:
   - How does Go handle slices differently from arrays?
   - Create a map of items and their prices, and write a function that returns the total price of selected items.
+
+#### Tasks
+
+**Task 1: Structs and Methods – Library System**
+
+Create a library system where you can add books, lend books to users, and return books. Each book should be represented by a struct with attributes like title, author, and availability status. You should implement methods for:
+
+1. Adding a book to the library.
+2. Lending a book to a user (change its availability).
+3. Returning a book (mark it as available again).
+
+Additionally, handle edge cases like trying to lend a book that’s already lent out or returning a book that wasn’t lent out.
+
+Key Points:
+- Use a slice of structs to store multiple books.
+- Each method should be able to modify the availability status of a book.
+
+**Task 2: Nested Maps and Slices – User Data Management**
+
+Write a program to manage user data for an application. Each user has a username, and each username has multiple associated attributes like age, email, and a list of favorite movies. You should use a map to store this data where:
+- The keys are usernames (strings).
+- The values are structs containing the user's information (```age```, ```email```, and a slice of ```favoriteMovies```).
+
+Implement the following features:
+1. Add a new user.
+2. Update a user's information.
+3. Retrieve a user's favorite movies.
+4. List all users who have a specific movie in their favorites.
+
+Key Points:
+- Use maps for quick lookups and slices for storing lists of favorite movies.
+- Ensure you handle updating a user who already exists and avoid duplicate entries in their favorite movies.
+
+**Task 3: Slices and Maps – Most Frequent Words**
+
+Write a program that takes a long string of text and returns the top 5 most frequent words and their respective counts. Use a map to store the frequency of each word and a slice to store the words sorted by their frequency.
+
+Steps:
+1. Split the text into words (consider punctuation and case sensitivity).
+2. Use a map to count occurrences of each word.
+3. Sort the words by their frequency and return the top 5.
+
+Key Points:
+- Use slices for sorting.
+- Ensure that the map keys are the words, and the values are their frequencies.
+
+**Task 4: Slices – Merging Intervals**
+
+Given a list of intervals represented by pairs of integers (e.g., ```[1, 3]```, ```[2, 6]```), write a function that merges all overlapping intervals and returns a list of merged intervals.
+
+For example, if the input is ```[[1, 3], [2, 6], [8, 10], [15, 18]]```, the output should be ```[[1, 6], [8, 10], [15, 18]]```.
+
+Key Points:
+- Use slices to represent intervals.
+- You need to sort the intervals by their start time before merging them.
+- Ensure your function can handle edge cases, such as when no intervals overlap or when all intervals overlap.
+
+**Task 5: Structs and Maps – Product Inventory System**
+
+Create a product inventory system where each product is represented by a struct with fields like ```ID```, ```name```, ```quantity```, and ```price```. The system should allow:
+1. Adding new products.
+2. Updating the quantity of existing products.
+3. Deleting products.
+4. Displaying a summary of the inventory (total value of all products).
+
+Use a map to store the products, where the ```ID``` is the key and the product struct is the value.
+
+Key Points:
+- Handle adding, updating, and deleting products efficiently.
+- Ensure that the system updates both the quantity and the price when necessary.
+- Calculate the total value of the inventory by multiplying the price and quantity for each product.
 
 #### **Day 5: Pointers**
 - **Theory**: Go pointers, reference vs value types.

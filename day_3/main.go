@@ -74,9 +74,10 @@ func main() {
 	// 	fmt.Println("Successfull withdraw")
 	// }
 
-	err := openFile("./sample1.txt")
-	if err != nil {
-		fmt.Println("openFile error:", err.Error())
-		fmt.Println("detailed error:", errors.Unwrap(err))
-	}
+	// Task 4
+	// err := openFile("./sample1.txt")
+	// if err != nil {
+	// 	fmt.Println("openFile error:", err.Error())
+	// 	fmt.Println("detailed error:", errors.Unwrap(err))
+	// }
 }
