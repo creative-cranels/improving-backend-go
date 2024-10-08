@@ -115,6 +115,72 @@ Sorry, you've used all attempts. The correct number was 27.
   - Explain Go’s approach to error handling.
   - Write a function that divides two numbers and returns both the quotient and any error.
 
+##### Tasks
+
+**Task 1: Multiple Return Values**
+
+Write a function calculate(a, b int) that returns the sum, difference, product, and quotient (if b is not zero) of two integers. Return an error if the second integer is zero.
+
+Example:
+```go
+sum, diff, product, quotient, err := calculate(10, 0)
+```
+
+**Task 2: Variadic Function**
+
+Write a variadic function findMax that takes any number of integer arguments and returns the largest one.
+
+Example:
+```go
+max := findMax(3, 9, 2, 5, 7)
+```
+
+**Task 3: Custom Error**
+
+Create a custom error InsufficientFundsError that includes the amount requested and the amount available. Use it in a withdraw function that checks if there are enough funds before proceeding.
+
+Example:
+```go
+type InsufficientFundsError struct {
+    Requested, Available float64
+}
+
+func (e *InsufficientFundsError) Error() string {
+    return fmt.Sprintf("requested: %.2f, available: %.2f", e.Requested, e.Available)
+}
+
+func withdraw(balance, amount float64) error {
+    if amount > balance {
+        return &InsufficientFundsError{Requested: amount, Available: balance}
+    }
+    return nil
+}
+```
+
+**Task 4: Wrapping and Unwrapping Errors**
+
+Create a readFile function that reads a file and returns an error if the file cannot be opened. Wrap the error using fmt.Errorf with %w, and then unwrap it to display the original error.
+
+Example:
+```go
+func readFile(filename string) error {
+    _, err := os.Open(filename)
+    if err != nil {
+        return fmt.Errorf("failed to open file: %w", err)
+    }
+    return nil
+}
+
+func main() {
+    err := readFile("nonexistent.txt")
+    if err != nil {
+        fmt.Println(err)
+        fmt.Println("Original error:", errors.Unwrap(err))
+    }
+}
+```
+
+
 #### **Day 4: Go Data Structures**
 - **Theory**: Arrays, slices, maps, and structs.
 - **Coding**: Implement a contact list using structs and slices.
